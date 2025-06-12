@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
 import { glowEffect } from './transitions';
 
-interface GlowButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface GlowButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "onDrag"> {
   glowColor?: string;
   glowIntensity?: number;
   className?: string;
