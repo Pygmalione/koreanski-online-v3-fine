@@ -40,6 +40,7 @@ export const theme = {
       900: '#111827',
       950: '#030712',
     },
+    glow: '#60a5fa', // For 2025 glow effects
   },
   breakpoints: {
     sm: '640px',
