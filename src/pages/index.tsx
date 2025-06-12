@@ -5,6 +5,8 @@ import { HeroSection } from "@/components/sections/hero";
 import { FeaturesSection } from "@/components/sections/features";
 import { PricingSection } from "@/components/sections/pricing";
 import { TestimonialsSection } from "@/components/sections/testimonials";
+import { LearningMethodsSection } from "@/components/sections/learning-methods";
+import { JadziaKimCompanion } from "@/components/sections/jadzia-kim-companion";
 import { LanguageGoalSelector } from "@/components/ui/language-goal-selector";
 import { LessonPreview } from "@/components/ui/lesson-preview";
 import { JadziaAssistant } from "@/components/ui/jadzia-assistant";
@@ -31,6 +33,12 @@ const Index = () => {
       
       {/* Features section */}
       <FeaturesSection />
+      
+      {/* Learning methods section */}
+      <LearningMethodsSection />
+      
+      {/* Jadzia Kim companion section */}
+      <JadziaKimCompanion />
       
       {/* Language goal selector */}
       <LanguageGoalSelector />
