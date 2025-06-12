@@ -14,6 +14,10 @@ import Index from "./pages";
 import LoginForm from "./pages/login";
 import SignupForm from "./pages/signup";
 import Logout from "./pages/logout";
+import GoalsPage from "./pages/goals";
+import TrialLessonPage from "./pages/trial-lesson";
+import Dashboard from "./pages/dashboard";
+
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")!).render(
@@ -26,6 +30,9 @@ createRoot(document.getElementById("root")!).render(
             <Route path='/login' element={<LoginForm />} />
             <Route path='/signup' element={<SignupForm />} />
             <Route path='/logout' element={<Logout />} />
+            <Route path='/goals' element={<GoalsPage />} />
+            <Route path='/trial-lesson' element={<TrialLessonPage />} />
+            <Route path='/dashboard' element={<Dashboard />} />
           </Routes>
         </BrowserRouter>
         <Sonner />
