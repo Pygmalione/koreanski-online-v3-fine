@@ -55,7 +55,9 @@ const DashboardContent = () => {
                       <span className="text-gray-400">Ukończono</span>
                       <span className="text-white font-medium">12%</span>
                     </div>
-                    <Progress value={12} className="h-2 bg-blue-900/30" indicatorClassName="bg-blue-600" />
+                    <div className="h-2 bg-blue-900/30 rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-600 rounded-full" style={{ width: "12%" }}></div>
+                    </div>
                   </div>
                 </CardContent>
                 <CardFooter>
@@ -76,7 +78,9 @@ const DashboardContent = () => {
                       <span className="text-gray-400">Zdobyte</span>
                       <span className="text-white font-medium">3 z 20</span>
                     </div>
-                    <Progress value={15} className="h-2 bg-blue-900/30" indicatorClassName="bg-blue-600" />
+                    <div className="h-2 bg-blue-900/30 rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-600 rounded-full" style={{ width: "15%" }}></div>
+                    </div>
                   </div>
                 </CardContent>
                 <CardFooter>
@@ -97,7 +101,9 @@ const DashboardContent = () => {
                       <span className="text-gray-400">W tym tygodniu</span>
                       <span className="text-white font-medium">2.5h / 4h</span>
                     </div>
-                    <Progress value={62.5} className="h-2 bg-blue-900/30" indicatorClassName="bg-blue-600" />
+                    <div className="h-2 bg-blue-900/30 rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-600 rounded-full" style={{ width: "62.5%" }}></div>
+                    </div>
                   </div>
                 </CardContent>
                 <CardFooter>

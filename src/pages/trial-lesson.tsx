@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/footer";
 import { AnimatedBackground } from "@/components/ui/animated-background";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Play, CheckCircle, Volume2, ArrowRight, ArrowLeft, Sparkles } from "lucide-react";
+import { Play, CheckCircle, Volume2, ArrowRight, ArrowLeft, Sparkles, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 
