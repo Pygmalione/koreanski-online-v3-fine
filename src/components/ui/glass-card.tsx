@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
-import { motion, MotionProps } from "framer-motion";
+import { motion } from "framer-motion";
 import { forwardRef } from "react";
 
-export interface GlassCardProps extends React.HTMLAttributes<HTMLDivElement>, MotionProps {
+export interface GlassCardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "onDrag"> {
   variant?: "default" | "elevated" | "bordered" | "glow";
   animate?: boolean;
 }
@@ -34,7 +34,7 @@ export const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
           ref={ref}
           className={cn(baseStyles, variantStyles[variant], className)}
           whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-          {...props}
+          {...props as any} // Use type assertion to avoid TypeScript errors
         >
           {children}
         </motion.div>

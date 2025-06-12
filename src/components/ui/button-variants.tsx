@@ -31,7 +31,7 @@ const buttonVariants = cva(
 );
 
 // Define button props
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onDrag"> {
   variant?: "default" | "secondary" | "ghost" | "outline" | "glow";
   size?: "default" | "sm" | "lg" | "icon";
   asChild?: boolean;
@@ -49,7 +49,7 @@ export const ButtonVariants = forwardRef<HTMLButtonElement, ButtonProps>(
           className={cn(buttonVariants({ variant, size, className }))}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          {...props}
+          {...props as any} // Use type assertion to avoid TypeScript errors
         />
       );
     }

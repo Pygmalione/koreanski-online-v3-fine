@@ -15,7 +15,7 @@ export function DesignSystemShowcase() {
 
   const navigationRightItems = [
     { label: "Login", href: "/login" },
-    { label: "Sign Up", href: "/signup", isButton: true, variant: "glow" },
+    { label: "Sign Up", href: "/signup", isButton: true, variant: "glow" as const },
   ];
 
   return (

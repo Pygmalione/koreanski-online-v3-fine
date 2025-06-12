@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
-import { motion, MotionProps } from "framer-motion";
+import { motion } from "framer-motion";
 import { forwardRef } from "react";
 
-export interface KoreanTextProps extends React.HTMLAttributes<HTMLDivElement>, MotionProps {
+export interface KoreanTextProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "onDrag"> {
   as?: "span" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
   size?: "xs" | "sm" | "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl";
   weight?: "normal" | "medium" | "semibold" | "bold";
@@ -46,7 +46,7 @@ export const KoreanText = forwardRef<HTMLDivElement, KoreanTextProps>(
         <motion.div
           ref={ref}
           className={cn(sizeClasses[size], weightClasses[weight], koreanFontClass, className)}
-          {...props}
+          {...props as any} // Use type assertion to avoid TypeScript errors
         >
           {children}
         </motion.div>
@@ -55,7 +55,7 @@ export const KoreanText = forwardRef<HTMLDivElement, KoreanTextProps>(
 
     return (
       <Component
-        ref={ref}
+        ref={ref as any} // Use type assertion for dynamic component
         className={cn(sizeClasses[size], weightClasses[weight], koreanFontClass, className)}
         {...props}
       >
