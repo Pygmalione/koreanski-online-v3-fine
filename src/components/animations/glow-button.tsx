@@ -3,7 +3,10 @@ import { ButtonHTMLAttributes, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
 import { glowEffect } from './transitions';
 
-interface GlowButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "onDrag"> {
+// Define the drag-related event handlers that need to be excluded
+type DragHandlers = "onDrag" | "onDragEnd" | "onDragEnter" | "onDragExit" | "onDragLeave" | "onDragOver" | "onDragStart";
+
+interface GlowButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, DragHandlers> {
   glowColor?: string;
   glowIntensity?: number;
   className?: string;
