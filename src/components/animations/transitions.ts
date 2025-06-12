@@ -9,6 +9,13 @@ export const fadeIn: Variants = {
   },
 };
 
+// Fade in up animation (exactly as specified)
+export const fadeInUp: Variants = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
 // Slide up animation
 export const slideUp: Variants = {
   hidden: { y: 50, opacity: 0 },
@@ -19,8 +26,13 @@ export const slideUp: Variants = {
   },
 };
 
-// Stagger children animation
+// Stagger container animation (exactly as specified)
 export const staggerContainer: Variants = {
+  animate: { transition: { staggerChildren: 0.1 } }
+};
+
+// Stagger children animation with more options
+export const staggerChildren: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -29,6 +41,12 @@ export const staggerContainer: Variants = {
       delayChildren: 0.2,
     }
   }
+};
+
+// Glow effect animation (exactly as specified)
+export const glowEffect: Variants = {
+  initial: { boxShadow: "0 0 0 rgba(96, 165, 250, 0)" },
+  hover: { boxShadow: "0 0 20px rgba(96, 165, 250, 0.5)" }
 };
 
 // Glow pulse animation
@@ -60,4 +78,15 @@ export const pageTransition: Variants = {
   initial: { opacity: 0 },
   animate: { opacity: 1, transition: { duration: 0.5 } },
   exit: { opacity: 0, transition: { duration: 0.3 } }
+};
+
+// Parallax scroll effect
+export const parallaxScroll = {
+  y: [-20, 20],
+  transition: {
+    repeat: Infinity,
+    repeatType: "reverse" as const,
+    duration: 2,
+    ease: "easeInOut"
+  }
 };

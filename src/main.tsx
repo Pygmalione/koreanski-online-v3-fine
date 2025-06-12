@@ -17,6 +17,7 @@ import GoalsPage from "./pages/goals";
 import TrialLessonPage from "./pages/trial-lesson";
 import Dashboard from "./pages/dashboard";
 import DesignSystemPage from "./pages/design-system";
+import AnimationDemo from "./pages/animation-demo";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ createRoot(document.getElementById("root")!).render(
               <Route path='/trial-lesson' element={<TrialLessonPage />} />
               <Route path='/dashboard' element={<Dashboard />} />
               <Route path='/design-system' element={<DesignSystemPage />} />
+              <Route path='/animation-demo' element={<AnimationDemo />} />
             </Routes>
           </AnimatePresence>
         </BrowserRouter>
