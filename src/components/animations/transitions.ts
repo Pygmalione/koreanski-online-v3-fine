@@ -12,8 +12,11 @@ export const fadeIn: Variants = {
 // Fade in up animation (exactly as specified)
 export const fadeInUp: Variants = {
   initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: "easeOut" }
+  animate: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
 };
 
 // Slide up animation

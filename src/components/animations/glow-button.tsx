@@ -53,7 +53,7 @@ export const GlowButton = forwardRef<HTMLButtonElement, GlowButtonProps>(
           className
         )}
         initial="initial"
-        whileHover={["hover", { scale: 1.02 }]}
+        whileHover={["hover", { scale: 1.02 }] as any}
         whileTap={{ scale: 0.98 }}
         variants={customGlowEffect}
         {...props}
