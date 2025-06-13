@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Brain, Network, Bridge, ArrowRight } from "lucide-react";
+import { Brain, Network, ArrowRight } from "lucide-react"; // Bridge icon is not available in lucide-react
 import { Button } from "@/components/ui/button";
 import { TypewriterText } from "@/components/animations";
 import { cn } from "@/lib/utils";
@@ -107,7 +107,7 @@ export function LearningMethodsSection() {
                 animate={{ scale: [1, 0.9, 1] }}
                 transition={{ repeat: Infinity, duration: 2 }}
               >
-                <Play className="h-4 w-4 text-blue-400" />
+                <ArrowRight className="h-4 w-4 text-blue-400" />
               </motion.div>
             </div>
             <span className="text-xs text-blue-300">Fragment z "Crash Landing on You"</span>
@@ -147,7 +147,7 @@ export function LearningMethodsSection() {
       index: 1
     },
     {
-      icon: Bridge,
+      icon: Network,
       title: "CulturalBridge™ Pedagogy",
       description: "Wykorzystujemy podobieństwa polsko-koreańskie",
       demoTitle: "Porównanie gramatyczne",

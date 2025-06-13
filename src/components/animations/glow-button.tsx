@@ -1,17 +1,21 @@
-import { motion } from 'framer-motion';
-import { ButtonHTMLAttributes, forwardRef } from 'react';
+import { motion, HTMLMotionProps, PanInfo } from 'framer-motion';
+import { forwardRef } from 'react';
 import { cn } from '@/lib/utils';
-import { glowEffect } from './transitions';
+import type { ReactNode } from 'react';
 
 // Define the drag-related event handlers that need to be excluded
-type DragHandlers = "onDrag" | "onDragEnd" | "onDragEnter" | "onDragExit" | "onDragLeave" | "onDragOver" | "onDragStart";
+// No need to exclude drag handlers since we're using Framer Motion's motion.button component
 
-interface GlowButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, DragHandlers> {
+interface GlowButtonProps extends HTMLMotionProps<'button'> {
+  children: ReactNode;
   glowColor?: string;
   glowIntensity?: number;
   className?: string;
   variant?: 'default' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
+  onDrag?: (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => void;
+  onDragEnd?: (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => void;
+  onDragStart?: (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => void;
 }
 
 export const GlowButton = forwardRef<HTMLButtonElement, GlowButtonProps>(
