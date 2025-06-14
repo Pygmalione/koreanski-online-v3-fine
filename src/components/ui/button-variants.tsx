@@ -31,7 +31,7 @@ const buttonVariants = cva(
 );
 
 // Define button props
-export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onDrag"> {
+export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onDrag" | "onDragStart" | "onDragEnd"> {
   variant?: "default" | "secondary" | "ghost" | "outline" | "glow";
   size?: "default" | "sm" | "lg" | "icon";
   asChild?: boolean;
