@@ -40,7 +40,7 @@ export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonE
 
 // Create the button component
 export const ButtonVariants = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, animate = false, ...props }, ref) => {
+  ({ className, variant, size, animate = false, asChild = false, children, ...props }, ref) => {
     // If animate is true, wrap with motion.button
     if (animate) {
       return (
@@ -49,8 +49,24 @@ export const ButtonVariants = forwardRef<HTMLButtonElement, ButtonProps>(
           className={cn(buttonVariants({ variant, size, className }))}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          {...props as any} // Use type assertion to avoid TypeScript errors
-        />
+          {...props}
+        >
+          {children}
+        </motion.button>
+      );
+    }
+
+    // If asChild is true, use the ShadcnButton with asChild
+    if (asChild) {
+      return (
+        <ShadcnButton
+          ref={ref}
+          className={cn(buttonVariants({ variant, size, className }))}
+          asChild
+          {...props}
+        >
+          {children}
+        </ShadcnButton>
       );
     }
 
@@ -60,7 +76,9 @@ export const ButtonVariants = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         className={cn(buttonVariants({ variant, size, className }))}
         {...props}
-      />
+      >
+        {children}
+      </ShadcnButton>
     );
   }
 );

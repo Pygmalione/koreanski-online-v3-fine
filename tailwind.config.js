@@ -88,6 +88,13 @@ export default {
         },
         glow: '#60a5fa', // For 2025 glow effects
       },
+      boxShadow: {
+        'glow-sm': '0 0 5px rgba(59, 130, 246, 0.5)',
+        'glow-md': '0 0 15px rgba(59, 130, 246, 0.5)',
+        'glow-lg': '0 0 25px rgba(59, 130, 246, 0.5)',
+        'glow-xl': '0 0 40px rgba(59, 130, 246, 0.5)',
+        'glow-accent': '0 0 20px rgba(16, 185, 129, 0.5)',
+      },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',

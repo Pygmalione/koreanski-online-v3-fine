@@ -18,7 +18,20 @@ export const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
       glow: "bg-white/10 shadow-glow-sm hover:shadow-glow-md transition-shadow duration-300",
     };
 
-    const cardContent = (
+    if (animate) {
+      return (
+        <motion.div
+          ref={ref}
+          className={cn(baseStyles, variantStyles[variant], className)}
+          whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+          {...props}
+        >
+          {children}
+        </motion.div>
+      );
+    }
+
+    return (
       <div
         ref={ref}
         className={cn(baseStyles, variantStyles[variant], className)}
@@ -27,21 +40,6 @@ export const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
         {children}
       </div>
     );
-
-    if (animate) {
-      return (
-        <motion.div
-          ref={ref}
-          className={cn(baseStyles, variantStyles[variant], className)}
-          whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-          {...props as any} // Use type assertion to avoid TypeScript errors
-        >
-          {children}
-        </motion.div>
-      );
-    }
-
-    return cardContent;
   }
 );
 

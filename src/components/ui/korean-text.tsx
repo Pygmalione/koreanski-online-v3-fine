@@ -46,21 +46,23 @@ export const KoreanText = forwardRef<HTMLDivElement, KoreanTextProps>(
         <motion.div
           ref={ref}
           className={cn(sizeClasses[size], weightClasses[weight], koreanFontClass, className)}
-          {...props as any} // Use type assertion to avoid TypeScript errors
+          {...props}
         >
           {children}
         </motion.div>
       );
     }
 
+    const ElementComponent = Component as any;
+
     return (
-      <Component
-        ref={ref as any} // Use type assertion for dynamic component
+      <ElementComponent
+        ref={ref}
         className={cn(sizeClasses[size], weightClasses[weight], koreanFontClass, className)}
         {...props}
       >
         {children}
-      </Component>
+      </ElementComponent>
     );
   }
 );
