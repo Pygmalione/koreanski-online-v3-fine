@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { forwardRef } from "react";
 
-export interface GlassCardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "onDrag"> {
+export interface GlassCardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "onDrag" | "onDragStart" | "onDragEnd" | "onDragOver" | "onDragEnter" | "onDragLeave" | "onDrop"> {
   variant?: "default" | "elevated" | "bordered" | "glow";
   animate?: boolean;
 }
